@@ -1,21 +1,22 @@
-a = input("aの値を入力: ")
-#b = input("bの値を入力: ")
+def is_prime_number(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
 
-# TODO
-n = a
-is_prime = True
+a = int(input("aの値を入力: "))
+b = int(input("bの値を入力: "))
 
-# 2から n-1 までの数で割り切れるかどうか
-for p in range(2, n):
-    if n % p == 0:
-        is_prime = False
-        break
-
-# 1と自分自身以外で割り切れなければ素数
-if n == 1:
-    is_prime = False
-
-if is_prime:
-    print(str(n) + ' は素数である。')
+# aの素数判定
+if is_prime_number(a):
+    print(str(a) + ' は素数である。')
 else:
-    print(str(n) + ' は素数ではない。')
+    print(str(a) + ' は素数ではない。')
+
+# bの素数判定
+if is_prime_number(b):
+    print(str(b) + ' は素数である。')
+else:
+    print(str(b) + ' は素数ではない。')
