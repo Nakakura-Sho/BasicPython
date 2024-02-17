@@ -12,8 +12,13 @@ def euclid(a,b):
         A, B = B, A % B
     return A
 #ここから問4
-A = euclid(a,b)
-if A == 1:
-    return True
-else:
-    return False
+def kouyaku(n):
+    
+    if n == 1:
+        return True
+    else:
+        return False
+
+answer = kouyaku(euclid(a,b))
+print(answer)
+

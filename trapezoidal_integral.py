@@ -1,17 +1,13 @@
 from math import sin, pi
 
-def f(a, b, N):
+def fun(f,a=0, b=1, N=100):
     h = (b - a) / N
     answer = 0
 
     for i in range(1, N + 1):
-        answer += (h / 2) * (sin(a + (i - 1) * h) + sin(a + i * h))
+        answer += (h / 2) * (f(a + (i - 1) * h) + f(a + i * h))
 
     return answer
 
-a = 0
-b = 1
-N = 100
-
-result = f(a, b, N)
+result = fun(sin,0,0.5*pi,50)
 print(result)
