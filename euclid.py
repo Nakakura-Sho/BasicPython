@@ -1,15 +1,24 @@
-a = int(input("a の値を入力: "))
-b = int(input("b の値を入力: "))
+def euclid(a,b):
 
-# TODO
-if a > b:
-    A = a
-    B = b
-else:
-    A = b
-    B = a
 
-while B != 0:
-    A, B = B, A % B
+    if a > b:
+        A = a
+        B = b
+    else:
+        A = b
+        B = a
 
-print(A)
+    while B != 0:
+        A, B = B, A % B
+    return A
+#ここから問4
+def kouyaku(n):
+    
+    if n == 1:
+        return True
+    else:
+        return False
+
+answer = kouyaku(euclid(a,b))
+print(answer)
+

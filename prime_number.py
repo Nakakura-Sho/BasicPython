@@ -1,22 +1,14 @@
-def is_prime_number(num):
-    if num <= 1:
-        return False
-    for i in range(2, int(num**0.5) + 1):
-        if num % i == 0:
-            return False
-    return True
+def sosuu(n):
+    is_prime = True
 
-a = int(input("aの値を入力: "))
-b = int(input("bの値を入力: "))
+    # 2から n-1 までの数で割り切れるかどうか
+    for p in range(2, n):
+        if n % p == 0:
+            is_prime = False
+            break
 
-# aの素数判定
-if is_prime_number(a):
-    print(str(a) + ' は素数である。')
-else:
-    print(str(a) + ' は素数ではない。')
+    # 1と自分自身以外で割り切れなければ素数である
+    if n == 1:
+        is_prime = False
 
-# bの素数判定
-if is_prime_number(b):
-    print(str(b) + ' は素数である。')
-else:
-    print(str(b) + ' は素数ではない。')
+    return is_prime
